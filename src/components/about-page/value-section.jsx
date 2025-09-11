@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { LeafyGreen, Award, DollarSign, Truck, Image as ImageIcon } from "lucide-react";
+import { LeafyGreen, Award, DollarSign, Truck, Image as ImageIcon, ChevronRight } from "lucide-react";
 
 export default function ValueSection() {
   const values = [
@@ -55,16 +55,23 @@ export default function ValueSection() {
               );
             })}
 
-            {/* Bottom Buttons */}
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} viewport={{ once: true }} className="col-span-1 sm:col-span-2 flex gap-4 pt-8">
-              <button className="px-6 py-2 border border-gray-600 text-white text-sm font-medium rounded hover:bg-gray-800 transition-colors duration-300">Request</button>
-              <button className="px-6 py-2 border border-gray-600 text-white text-sm font-medium rounded hover:bg-gray-800 transition-colors duration-300">Contact</button>
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} viewport={{ once: true }} className="flex flex-col sm:flex-row gap-4 items-start">
+              {/* Contact Button */}
+              <button className="inline-flex items-center justify-center px-6 py-3 border border-gray-500 rounded-full text-primary hover:border-gray-400 hover:bg-surface transition-all duration-300">
+                <span className="body-sm font-medium">Contact</span>
+              </button>
+
+              {/* Inquire Button */}
+              <button className="inline-flex items-center gap-2 text-secondary hover:text-primary transition-colors duration-300 group py-3">
+                <span className="body-sm font-medium">Inquire</span>
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
             </motion.div>
           </div>
 
           {/* Right Side - Image Placeholder */}
           <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} viewport={{ once: true }} className="relative">
-            <div className="aspect-[4/3] bg-gray-600 rounded-lg flex items-center justify-center">
+            <div className="aspect-[4/3] bg-gray-600 rounded-2xl flex items-center justify-center">
               <ImageIcon className="w-16 h-16 text-gray-400" />
             </div>
           </motion.div>

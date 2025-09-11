@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Button from "../ui/button";
-import { LeafyGreen } from "lucide-react";
+import { Sprout } from "lucide-react";
 
 const DiscoverSection = () => {
   const handleLearnMore = () => {
@@ -22,7 +22,7 @@ const DiscoverSection = () => {
           {/* Left Content */}
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="space-y-8 order-2 lg:order-1">
             {/* Icon */}
-            <LeafyGreen className="w-12 h-12 "></LeafyGreen>
+            <Sprout className="w-12 h-12 "></Sprout>
 
             {/* Heading */}
             <div className="space-y-4">

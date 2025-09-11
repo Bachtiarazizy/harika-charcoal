@@ -63,23 +63,23 @@ Best regards,
                 priority
               />
             </Link>
-            <div className="hidden lg:flex items-center space-x-6 ml-8">
-              <Link href="/" className={`text-sm font-medium transition-colors duration-200 ${isActive("/") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
-                Home
-              </Link>
-              <Link href="/about" className={`text-sm font-medium transition-colors duration-200 ${isActive("/about") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
-                About Us
-              </Link>
-              <Link href="/products" className={`text-sm font-medium transition-colors duration-200 ${isActive("/products") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
-                Our Products
-              </Link>
-              <Link href="/export-process" className={`text-sm font-medium transition-colors duration-200 ${isActive("/export-process") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
-                Export Process
-              </Link>
-              <Link href="/articles" className={`text-sm font-medium transition-colors duration-200 ${isActive("/articles") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
-                Articles
-              </Link>
-            </div>
+          </div>
+          <div className="hidden lg:flex items-center space-x-6 ml-8">
+            <Link href="/" className={`text-sm font-medium transition-colors duration-200 ${isActive("/") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
+              Home
+            </Link>
+            <Link href="/about" className={`text-sm font-medium transition-colors duration-200 ${isActive("/about") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
+              About Us
+            </Link>
+            <Link href="/products" className={`text-sm font-medium transition-colors duration-200 ${isActive("/products") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
+              Our Products
+            </Link>
+            <Link href="/export-process" className={`text-sm font-medium transition-colors duration-200 ${isActive("/export-process") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
+              Export Process
+            </Link>
+            <Link href="/articles" className={`text-sm font-medium transition-colors duration-200 ${isActive("/articles") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
+              Articles
+            </Link>
           </div>
 
           <div className="hidden lg:flex items-center space-x-4">

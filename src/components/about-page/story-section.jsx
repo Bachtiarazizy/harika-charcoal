@@ -21,29 +21,16 @@ const StorySection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="space-y-8 order-2 lg:order-1">
-            {/* Icon */}
-            <LeafyGreen className="w-12 h-12 "></LeafyGreen>
-
             {/* Heading */}
             <div className="space-y-4">
-              <h2 className="heading-xl text-primary leading-tight">DISCOVER HARIKA CHARCOAL'S SUSTAINABLE EXCELLENCE</h2>
+              <h2 className="heading-xl text-primary uppercase leading-tight">Sustainably Connecting Indonesia to the World</h2>
             </div>
 
             {/* Description */}
             <p className="body-lg text-secondary leading-relaxed max-w-lg">
-              Harika Charcoal is proud to offer premium charcoal sourced sustainably from Indonesia. Our commitment to eco-friendly practices ensures that our products meet the highest standards for global export.
+              Founded with a mission to connect Indonesia’s natural resources with the world, Harika Charcoal started as a small initiative to promote eco-friendly alternatives in the charcoal industry. Through dedication and innovation, we
+              have grown into a trusted supplier for global businesses, exporting to various markets while empowering local communities and supporting sustainable production practices.
             </p>
-
-            {/* Buttons */}
-            <div className="flex flex-row gap-4">
-              <Button variant="primaryOutline" size="medium" onClick={handleLearnMore} className="text-sm font-medium">
-                Learn More
-              </Button>
-
-              <Button variant="secondaryOutline" size="medium" onClick={handleContact} className="text-sm font-medium">
-                Contact
-              </Button>
-            </div>
           </motion.div>
 
           {/* Right Image */}
