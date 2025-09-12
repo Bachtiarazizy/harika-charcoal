@@ -16,6 +16,7 @@
   /* Background Colors */
   --bg-primary: var(--color-primary-dark);
   --bg-secondary: var(--color-secondary-dark);
+  --bg-primary-light: var(--color-white);
   --bg-surface: #1f2937;
   --bg-surface-light: #374151;
 
@@ -23,6 +24,8 @@
   --text-primary: var(--color-white);
   --text-secondary: var(--color-gray-light);
   --text-muted: var(--color-gray-medium);
+  --text-primary-dark: var(--color-primary-dark);
+  --text-secondary-dark: var(--color-secondary-dark);
 
   /* Fonts */
   --font-heading: var(--font-sora);

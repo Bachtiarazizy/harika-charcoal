@@ -139,33 +139,15 @@ export default function PackagingExportPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-primary overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image src="/hero-image.png" alt="Packaging & Export" fill className="object-cover" priority quality={90} />
-          <div className="absolute inset-0 bg-primary/70 z-10"></div>
-        </div>
-
-        <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
-          <div className="max-w-3xl">
-            <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
-              <div className="text-xs font-semibold text-[#16a34a] tracking-wider uppercase mb-4">GLOBAL LOGISTICS SOLUTIONS</div>
-              <h1 className="heading-xl text-primary leading-tight mb-6">
-                PACKAGING & EXPORT
-                <br />
-                <span className="text-[#16a34a]">INFORMATION</span>
-              </h1>
-              <p className="body-lg text-secondary mb-8 leading-relaxed">Professional packaging solutions and comprehensive export services to deliver your charcoal safely and efficiently to destinations worldwide.</p>
-              <div className="flex gap-4">
-                <Button variant="primary" size="large">
-                  <Download className="w-5 h-5 mr-2" />
-                  Export Guide
-                </Button>
-                <Button variant="primaryOutline" size="large">
-                  Get Shipping Quote
-                </Button>
-              </div>
-            </motion.div>
-          </div>
+      <section className="bg-primary text-white py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center">
+            <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Container className="w-8 h-8 text-white" />
+            </div>
+            <h1 className="heading-2xl text-white leading-tight mb-6">Packaging & Export Information</h1>
+            <p className="body-lg text-white/90 max-w-3xl mx-auto leading-relaxed">Professional packaging solutions and comprehensive export services to deliver your charcoal safely and efficiently to destinations worldwide. </p>
+          </motion.div>
         </div>
       </section>
 
@@ -371,7 +353,7 @@ export default function PackagingExportPage() {
               <h2 className="heading-xl text-white leading-tight">READY TO START YOUR EXPORT ORDER?</h2>
               <p className="body-lg text-white/90 leading-relaxed max-w-2xl mx-auto">Get personalized packaging solutions and shipping quotes for your specific requirements. Our export specialists are ready to assist you.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="primary" size="large">
+                <Button variant="primary" size="large" className="flex flex-col" href="/mailto:charcoal@harikanusantara.com" target="_blank" rel="noopener noreferrer">
                   <Package className="w-5 h-5 mr-2" />
                   Get Packaging Quote
                 </Button>
