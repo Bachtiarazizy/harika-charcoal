@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import Image from "next/image";
 import Button from "../ui/button"; // Import Button component
+import Link from "next/link";
 
 const HeroSection = () => {
   const handleGetQuote = () => {
@@ -19,7 +20,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen bg-primary overflow-hidden">
       {/* Background Hero Image */}
       <div className="absolute inset-0 z-0">
-        <Image src="/hero-image.png" alt="Harika Charcoal Hero Background" fill className="object-cover" priority quality={90} />
+        <Image src="/hero-image.png" alt="Harika Charcoal Hero Background" fill className="object-cover" priority />
 
         {/* Dark overlay untuk readability */}
         <div className="absolute inset-0 bg-primary/50 z-10"></div>
@@ -43,9 +44,11 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className="flex flex-row gap-4 justify-center items-center">
-            <Button variant="secondaryOutline" size="large" onClick={handleGetQuote}>
-              Get Price Quote
-            </Button>
+            <Link href="/mailto:charcoal@harikanusantara" target="_blank" rel="noopener noreferrer">
+              <Button variant="secondaryOutline" size="large" onClick={handleGetQuote}>
+                Get Price Quote
+              </Button>
+            </Link>
 
             <Button variant="primary" size="large" onClick={handleDownloadCatalog}>
               Download Catalog

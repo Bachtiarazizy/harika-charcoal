@@ -5,7 +5,7 @@ import { getArticles } from "@/sanity/queries/articles";
 export const metadata = {
   title: "Articles & Insights | Industry Knowledge Hub",
   description: "Stay informed with the latest charcoal industry insights, sustainability practices, quality standards, and expert knowledge. Discover trends and best practices from industry leaders.",
-  keywords: "charcoal industry articles, sustainability insights, quality standards, export guidelines, market trends, industry knowledge",
+  keywords: ["Indonesian charcoal supplier", "premium Indonesian charcoal export", "Indonesian coconut shell charcoal", "Indonesian hardwood charcoal", "Indonesian charcoal exporter"],
   openGraph: {
     title: "Articles & Insights | Industry Knowledge Hub",
     description: "Stay informed with the latest charcoal industry insights, sustainability practices, quality standards, and expert knowledge. Discover trends and best practices from industry leaders.",

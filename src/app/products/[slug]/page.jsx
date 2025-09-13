@@ -43,7 +43,20 @@ export async function generateMetadata({ params }) {
             },
           ]
         : undefined,
+      product: {
+        price: {
+          amount: product.price,
+          currency: "USD",
+        },
+        availability: "in stock",
+        condition: "new",
+      },
+
+      alternates: {
+        canonical: `/products/${params.slug}`,
+      },
     },
+
     twitter: {
       card: "summary_large_image",
       title: seoTitle,
