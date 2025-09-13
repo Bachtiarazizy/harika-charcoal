@@ -4,6 +4,31 @@ import { getProducts } from "@/sanity/queries/products";
 export default async function sitemap() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://charcoal.harikanusantara.com";
 
+  // Helper function to safely create Date objects
+  const safeDate = (date) => {
+    try {
+      if (!date) return new Date();
+
+      let dateObj;
+      if (date instanceof Date) {
+        dateObj = date;
+      } else {
+        dateObj = new Date(date);
+      }
+
+      // Check if date is valid
+      if (isNaN(dateObj.getTime())) {
+        console.warn("Invalid date provided, using current date:", date);
+        return new Date();
+      }
+
+      return dateObj;
+    } catch (error) {
+      console.error("Error creating date:", error, "Input:", date);
+      return new Date();
+    }
+  };
+
   // Static pages
   const staticPages = [
     {
@@ -80,23 +105,34 @@ export default async function sitemap() {
     },
   ];
 
-  // Dynamic product pages
-  const products = await getProducts();
-  const productPages = products.map((product) => ({
-    url: `${baseUrl}/products/${product.slug}`,
-    lastModified: new Date(product.updatedAt),
-    changeFrequency: "weekly",
-    priority: 0.7,
-  }));
+  let productPages = [];
+  let articlePages = [];
 
-  //   Dynamic Article pages
-  const articles = await getArticles();
-  const articlePages = articles.map((article) => ({
-    url: `${baseUrl}/articles/${article.slug}`,
-    lastModified: new Date(article.updatedAt),
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
+  try {
+    // Dynamic product pages
+    const products = await getProducts();
+    productPages = products.map((product) => ({
+      url: `${baseUrl}/products/${product.slug}`,
+      lastModified: safeDate(product.updatedAt),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    }));
+  } catch (error) {
+    console.error("Error fetching products for sitemap:", error);
+  }
 
-  return [...staticPages, ...productPages];
+  try {
+    // Dynamic Article pages
+    const articles = await getArticles();
+    articlePages = articles.map((article) => ({
+      url: `${baseUrl}/articles/${article.slug}`,
+      lastModified: safeDate(article.updatedAt),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }));
+  } catch (error) {
+    console.error("Error fetching articles for sitemap:", error);
+  }
+
+  return [...staticPages, ...productPages, ...articlePages];
 }
