@@ -1,9 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Package, Ship, Globe, Truck, Container, Shield, Clock, MapPin, FileCheck, Users, BarChart3, ArrowRight, Download, CheckCircle, Anchor, Plane } from "lucide-react";
+import { Package, Ship, Globe, Truck, Container, Shield, Clock, MapPin, FileCheck, Users, BarChart3, ArrowRight, Download, CheckCircle, Anchor, Plane, Calculator, ChevronRight } from "lucide-react";
 import Button from "@/components/ui/button";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function PackagingExportPage() {
   const [activePackaging, setActivePackaging] = useState("standard");
@@ -341,29 +342,29 @@ export default function PackagingExportPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative min-h-[50vh] overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image src="/hero-image.png" alt="Ready to Export" fill className="object-cover" quality={90} />
-          <div className="absolute inset-0 bg-black/60 z-10"></div>
-        </div>
+      <section className="bg-secondary py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="text-center">
+            <Ship className="w-12 h-12 text-white mx-auto mb-6" />
+            <h2 className="text-3xl font-bold text-white mb-4">Ready to Ship Your Order?</h2>
+            <p className="text-xl text-white/90 leading-relaxed mb-8 max-w-2xl mx-auto">Get a customized shipping quote for your charcoal order. Our logistics team will help you choose the best shipping solution for your needs.</p>
 
-        <div className="relative z-20 h-full min-h-[50vh] flex items-center justify-center py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="space-y-6">
-              <h2 className="heading-xl text-white leading-tight">READY TO START YOUR EXPORT ORDER?</h2>
-              <p className="body-lg text-white/90 leading-relaxed max-w-2xl mx-auto">Get personalized packaging solutions and shipping quotes for your specific requirements. Our export specialists are ready to assist you.</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="primary" size="large" className="flex flex-col" href="/mailto:charcoal@harikanusantara.com" target="_blank" rel="noopener noreferrer">
-                  <Package className="w-5 h-5 mr-2" />
-                  Get Packaging Quote
-                </Button>
-                <Button variant="secondaryOutline" size="large">
-                  <Ship className="w-5 h-5 mr-2" />
-                  Calculate Shipping
-                </Button>
-              </div>
-            </motion.div>
-          </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/mailto:charcoal@harikanusantara.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white text-primary-dark px-8 py-4 rounded-full hover:bg-white/90 transition-all duration-300 font-medium text-lg"
+              >
+                <Calculator className="w-5 h-5" />
+                Get Shipping Quote
+              </Link>
+              <Link href="/contact" className="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-primary-dark transition-all duration-300 font-medium text-lg">
+                <ChevronRight className="w-5 h-5" />
+                Contact Us
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -65,7 +65,7 @@ const ProductDetailPage = ({ product }) => {
       <section className="relative h-[80px] bg-primary border-b border-gray-200 text-white"></section>
       {/* Breadcrumb */}
       <section className="bg-primary ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <nav className="flex items-center gap-2 text-sm">
             <Link href="/" className="text-gray-500 hover:text-primary transition-colors">
               Home
@@ -81,7 +81,7 @@ const ProductDetailPage = ({ product }) => {
       </section>
 
       {/* Product Overview */}
-      <section className="bg-primary py-4 md:py-8">
+      <section className="bg-primary pb-8 md:pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Product Images */}
@@ -151,7 +151,7 @@ const ProductDetailPage = ({ product }) => {
               )}
 
               {/* Selected Grade Info */}
-              {selectedGrade && (
+              {/* {selectedGrade && (
                 <div className="bg-secondary rounded-2xl p-6 space-y-4">
                   <h4 className="heading-sm text-primary">{selectedGrade.name} Grade</h4>
 
@@ -179,15 +179,57 @@ const ProductDetailPage = ({ product }) => {
                     {selectedGrade.availability ? "Available" : "Out of Stock"}
                   </div>
                 </div>
-              )}
+              )} */}
             </motion.div>
           </div>
         </div>
       </section>
 
+      {/* Specifications Table */}
+      {selectedGrade && getSpecificationsTableData().length > 0 && (
+        <section className="py-16 bg-secondary">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+              <div className="mb-8">
+                <h2 className="heading-lg text-primary mb-4">Technical Specifications - {selectedGrade.name} Grade</h2>
+                <p className="body-base text-secondary">Detailed technical specifications for the selected grade.</p>
+              </div>
+
+              <div className="bg-primary rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="bg-secondary border-b border-gray-100">
+                        <th className="text-left py-4 px-6 body-base font-semibold text-primary">Specification</th>
+                        <th className="text-left py-4 px-6 body-base font-semibold text-primary">Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {getSpecificationsTableData().map((spec, index) => (
+                        <motion.tr
+                          key={index}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: index * 0.05 }}
+                          viewport={{ once: true }}
+                          className="border-b border-gray-50 hover:bg-gray-25 transition-colors"
+                        >
+                          <td className="py-4 px-6 body-base text-secondary">{spec.label}</td>
+                          <td className="py-4 px-6 body-base font-medium text-primary">{spec.value}</td>
+                        </motion.tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* Long Description */}
       {product.longDescription && (
-        <section className="bg-secondary py-16">
+        <section className="bg-primary py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
               <h2 className="heading-lg text-primary mb-8">Product Details</h2>
@@ -220,49 +262,6 @@ const ProductDetailPage = ({ product }) => {
                 </div>
               </div>
             )}
-          </div>
-        </section>
-      )}
-
-      {/* Specifications Table */}
-      {selectedGrade && getSpecificationsTableData().length > 0 && (
-        <section className="py-16 bg-primary">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
-              <div className="mb-8">
-                <h2 className="heading-lg text-primary mb-4">Technical Specifications - {selectedGrade.name} Grade</h2>
-                <p className="body-base text-secondary">Detailed technical specifications for the selected grade.</p>
-              </div>
-
-              <div className="bg-primary rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    
-                    <thead>
-                      <tr className="bg-secondary border-b border-gray-100">
-                        <th className="text-left py-4 px-6 body-base font-semibold text-primary">Specification</th>
-                        <th className="text-left py-4 px-6 body-base font-semibold text-primary">Value</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {getSpecificationsTableData().map((spec, index) => (
-                        <motion.tr
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: index * 0.05 }}
-                          viewport={{ once: true }}
-                          className="border-b border-gray-50 hover:bg-gray-25 transition-colors"
-                        >
-                          <td className="py-4 px-6 body-base text-secondary">{spec.label}</td>
-                          <td className="py-4 px-6 body-base font-medium text-primary">{spec.value}</td>
-                        </motion.tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </section>
       )}
@@ -321,7 +320,7 @@ const ProductDetailPage = ({ product }) => {
       )}
 
       {/* Packaging & Certifications */}
-      <section className="bg-primary py-16">
+      <section className="bg-secondary py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Packaging */}
@@ -333,7 +332,7 @@ const ProductDetailPage = ({ product }) => {
                 </div>
                 <div className="space-y-6">
                   {product.packaging.map((pkg, index) => (
-                    <div key={index} className="border border-gray-100 rounded-xl p-6">
+                    <div key={index} className="border border-gray-100 bg-primary rounded-xl p-6">
                       <h3 className="heading-sm text-primary mb-3">{pkg.type}</h3>
                       <div className="space-y-2 text-sm">
                         {pkg.size && (

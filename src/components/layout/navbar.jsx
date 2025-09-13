@@ -49,7 +49,7 @@ Best regards,
 
   return (
     <nav className="absolute top-0 left-0 right-0 bg-transparent text-white z-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
@@ -64,7 +64,7 @@ Best regards,
               />
             </Link>
           </div>
-          <div className="hidden lg:flex items-center space-x-6 ml-8">
+          <div className="hidden lg:flex items-center space-x-8 ml-8">
             <Link href="/" className={`text-sm font-medium transition-colors duration-200 ${isActive("/") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
               Home
             </Link>
@@ -74,9 +74,7 @@ Best regards,
             <Link href="/products" className={`text-sm font-medium transition-colors duration-200 ${isActive("/products") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
               Our Products
             </Link>
-            <Link href="/export-process" className={`text-sm font-medium transition-colors duration-200 ${isActive("/export-process") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
-              Export Process
-            </Link>
+
             <Link href="/articles" className={`text-sm font-medium transition-colors duration-200 ${isActive("/articles") ? "text-[#16a34a]" : "text-[#d1d5db] hover:text-[#16a34a]"}`}>
               Articles
             </Link>

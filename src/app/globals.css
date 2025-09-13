@@ -119,6 +119,10 @@ body {
   background-color: var(--color-primary-dark);
 }
 
+.bg-primary-light {
+  background-color: var(--color-white);
+}
+
 .bg-secondary {
   background-color: var(--color-secondary-dark);
 }
@@ -133,6 +137,10 @@ body {
 
 .text-primary {
   color: var(--text-primary);
+}
+
+.text-primary-dark {
+  color: var(--text-primary-dark);
 }
 
 .text-secondary {

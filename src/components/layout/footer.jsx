@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Mail, Phone, MapPin, ChevronRight, Facebook, Twitter, Instagram, Linkedin, Youtube, MessageCircle } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,8 +23,8 @@ const Footer = () => {
     support: [
       { name: "Contact Us", href: "/contact" },
       { name: "FAQ", href: "/faq" },
+      { name: "Packaging", href: "/packaging" },
       { name: "Shipping Info", href: "/shipping" },
-      { name: "Technical Support", href: "/support" },
     ],
     legal: [
       { name: "Terms of Service", href: "/terms" },
@@ -70,7 +71,7 @@ const Footer = () => {
               {/* Company Logo & Description */}
               <div>
                 <Link href="/" className="inline-block mb-6">
-                  <div className="text-2xl font-bold text-white">Your Company</div>
+                  <Image src="/logo.png" alt="Harika Charcoal Logo" width={200} height={50} />
                 </Link>
                 <p className="body-base text-white/80 leading-relaxed max-w-md">Premium charcoal products sourced sustainably from Indonesia. Quality you can trust for BBQ, shisha, and industrial applications worldwide.</p>
               </div>
