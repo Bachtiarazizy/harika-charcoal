@@ -2,6 +2,7 @@
 
 import { notFound } from "next/navigation";
 import { getArticleBySlug, getArticles, generateArticleStructuredData } from "@/sanity/queries/articles";
+import ArticleDetailPage from "@/components/articles-page/article-detail";
 
 export async function generateMetadata({ params }) {
   const article = await getArticleBySlug(params.slug);
